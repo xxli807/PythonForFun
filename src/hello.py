@@ -12,4 +12,23 @@ def msg():
     else:
         raise ValueError("x is great than 2", x)
     
-msg() 
+# msg(123) 
+
+def reverse(x):
+    strX = str(x)
+    length = len(strX)
+    if length == 1:
+        return x
+    else:
+        firstChar = strX[0]
+        subStrx = strX[1:length]
+        if firstChar == "-":
+            return "-".join(subStrx[::-1])
+        elif firstChar == "1":
+            yyy = subStrx[::-1] 
+            return subStrx[::-1] 
+        else:
+            xxx = strX[::-1]
+            return strX[::-1]
+
+reverse(123)
