@@ -1,0 +1,13 @@
+#
+# @lc app=leetcode id=7 lang=python
+#
+# [7] Reverse Integer
+#
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        
+
