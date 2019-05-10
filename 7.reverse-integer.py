@@ -9,6 +9,8 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
+        if(abs(x) > (1 << 31) - 1):
+            return 0
         strX = str(x)
         length = len(strX)
         if length == 1:
@@ -16,6 +18,8 @@ class Solution(object):
         else:
             firstChar = strX[0]
             lastChar = strX[length-1]
+            # remove the 0 at the end
+            strX = strX.rstrip("0")
 
             if firstChar == "-":
                 subStrx = strX[1:length]
