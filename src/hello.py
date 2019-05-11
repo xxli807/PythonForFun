@@ -31,4 +31,22 @@ def reverse(x):
             xxx = strX[::-1]
             return strX[::-1]
 
-reverse(123)
+# reverse(123)
+
+def longestPalindrome(s: str) -> str:
+    text = s.lower()
+    results = []
+
+    for i in range(len(text)):
+        for j in range(0, i):
+            chunk = text[j:i + 1]
+
+            if chunk == chunk[::-1]:
+                results.append(chunk)
+
+    y = results
+    x = text.index(max(results, key=len)), results
+    return x
+
+
+longestPalindrome("babad")
