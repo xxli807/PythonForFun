@@ -9,8 +9,12 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        if(abs(x) > (1 << 31) - 1):
-            return 0
+        
+        # try:
+        #     int(x)
+        # except:
+        #     return 0
+
         strX = str(x)
         length = len(strX)
         if length == 1:
@@ -26,10 +30,16 @@ class Solution(object):
                 if lastChar == "0":
                     subStrx = strX[1:length-1]
                 reverseSub = subStrx[::-1]
+                n = int(reverseSub)
+                if(abs(n) > (1 << 31) - 1):
+                    return 0
                 return "-" + reverseSub
             else:
                 if lastChar == "0":
                     subStrx = strX[0:length-1]
                     return subStrx[::-1]
                 else:
+                    n = int(strX[::-1])
+                    if(abs(n) > (1 << 31) - 1):
+                        return 0
                     return strX[::-1]
